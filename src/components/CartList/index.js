@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 // 导入actionCreators
-import { increment, decrement } from '../../actions/cart'
+import { increment, decrement, decrementAsync } from '../../actions/cart'
 
 class CartList extends Component {
   render() {
@@ -28,7 +28,7 @@ class CartList extends Component {
                     <td>{item.title}</td>
                     <td>{item.price}</td>
                     <td>
-                      <button onClick={() => this.props.decrement(item.id)}>-</button>
+                      <button onClick={() => this.props.decrementAsync(item.id)}>-</button>
                       <span>
                         {item.amount}
                       </span>
@@ -64,4 +64,4 @@ const mapState = (state) => {
 // 第二个参数是mapDispatchToProps，这个的主要作用是把action生成的方法 注入到当前组件的props上面，一般不这样用
 // 直接第二个参数传递一个对象，这里的对象就是actionCreators，只要传入了actionCreators，在组件内，就可以通过this.props.actionCreator来调用 actionCreator会自动帮你把action dispatch出去
 
-export default connect(mapState, { increment, decrement })(CartList)
+export default connect(mapState, { increment, decrement, decrementAsync })(CartList)

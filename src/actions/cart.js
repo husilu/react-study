@@ -17,3 +17,9 @@ export const decrement = (id) => {
     }
   }
 }
+
+export const decrementAsync = id => dispatch => {
+  setTimeout(() => {
+    dispatch(decrement(id))
+  }, 2000)
+}
