@@ -1,4 +1,4 @@
-import actionType from './actionType'
+import actionType from './actionType';
 
 export const increment = (id) => {
   return {
@@ -17,11 +17,3 @@ export const decrement = (id) => {
     }
   }
 }
-
-
-export const decrementAsync = id => dispatch => {
-  setTimeout(() => {
-    dispatch(decrement(id))
-  }, 500)
-}
-
