@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import {
-  CartList
-} from './components'
+import { BlogList } from './components'
 
-function App(props) {
+function App() {
   return (
     <div className="App">
-      <CartList></CartList>
+      <BlogList></BlogList>
     </div>
   );
 }
